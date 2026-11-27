@@ -3,7 +3,6 @@ import {
   Desktop20Regular,
   ErrorCircle16Regular,
   Info16Regular,
-  Payment20Regular,
   Server20Regular,
   Wifi120Regular,
 } from '@fluentui/react-icons';
@@ -14,13 +13,12 @@ const nodes = [
   { label: 'KALI', icon: Desktop20Regular, on: 4 },
   { label: 'WEB', icon: Server20Regular, on: 2 },
   { label: 'WIFI', icon: Wifi120Regular, on: 1 },
-  { label: 'NFC', icon: Payment20Regular, on: 6 },
 ];
 const linkOn = [4, 2, 1];
 
 function EnvMap({ done }: { done: boolean[] }) {
   return (
-    <div className="netMap" role="img" aria-label="实验环境：KALI 攻击机、WEB 服务器、无线网络、饭卡终端">
+    <div className="netMap" role="img" aria-label="实验环境：KALI 攻击机、WEB 服务器、无线网络">
       {nodes.map((node, index) => (
         <div className="netCell" key={node.label}>
           {index > 0 && <span className={cx('netLink', done[linkOn[index - 1]] && 'on')} />}

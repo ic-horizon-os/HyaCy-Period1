@@ -73,7 +73,7 @@ export const concepts: Concept[] = [
     ask: '改了网址里的一个编号，为什么能看别人的数据？',
     analogy: '只报学号就能领别人的快递',
     explain: '系统只认编号、不核对身份，就发生了越权。这类问题也叫 IDOR。',
-    range: '实验 07 有饭卡和订单两个剧情，都栽在同一处。',
+    range: '实验 07 的订单页就栽在这一处。',
   },
   {
     icon: Key20Regular,

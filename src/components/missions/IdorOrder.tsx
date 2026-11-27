@@ -7,7 +7,7 @@ interface IdorOrderProps {
   onBreach: (detail: string) => void;
 }
 
-/** 剧情 2：订单页只认地址里的 id，不核对登录身份。 */
+/** 订单页只认地址里的 id，不核对登录身份。 */
 export function IdorOrder({ onBreach }: IdorOrderProps) {
   const [query, setQuery] = useState(String(MY_ORDER));
   const [checked, setChecked] = useState(false);
