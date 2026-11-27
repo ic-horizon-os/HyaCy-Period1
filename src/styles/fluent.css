@@ -1,0 +1,232 @@
+/* Fluent v9 组件的外观对齐：所有覆盖选择器至少三级特指度，保证压过 Griffel 的原子类 */
+
+.win.fui-FluentProvider {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  --colorCompoundBrandBackground: var(--accent);
+  --colorCompoundBrandBackgroundHover: var(--accent-hover);
+  --colorCompoundBrandBackgroundPressed: var(--accent-pressed);
+  --colorCompoundBrandStroke: var(--accent);
+  --colorCompoundBrandStrokeHover: var(--accent-hover);
+  --colorCompoundBrandStrokePressed: var(--accent-pressed);
+  --colorCompoundBrandForeground1: var(--on-accent);
+}
+
+/* 按钮：32px / 小 24px / 大 40px */
+.win .btn {
+  min-width: 96px;
+  height: 32px;
+  padding: 0 12px;
+  gap: 6px;
+  border-radius: var(--radius-control);
+  font-size: 14px;
+  font-weight: 400;
+  transition: background-color 150ms var(--ease), border-color 150ms var(--ease), color 150ms var(--ease);
+}
+.win .btnSmall {
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  font-size: 12px;
+}
+.win .btnLarge {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 15px;
+}
+
+.win .btnPrimary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.win .btnPrimary .fui-Button__icon {
+  color: var(--on-accent);
+}
+.win .btnPrimary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--on-accent);
+}
+.win .btnPrimary:active {
+  background-color: var(--accent-pressed);
+  border-color: var(--accent-pressed);
+  color: var(--on-accent);
+}
+
+.win .btnSecondary {
+  background-color: var(--bg-control);
+  border-color: var(--stroke-strong);
+  color: var(--text-primary);
+}
+.win .btnSecondary:hover {
+  background-color: var(--bg-solid-strong);
+  border-color: var(--stroke-strong);
+  color: var(--text-primary);
+}
+.win .btnSecondary:active {
+  background-color: var(--pressed);
+  color: var(--text-secondary);
+}
+
+.win .btnSubtle {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--text-primary);
+}
+.win .btnSubtle:hover {
+  background-color: var(--hover);
+  color: var(--text-primary);
+}
+.win .btnSubtle:active {
+  background-color: var(--pressed);
+  color: var(--text-secondary);
+}
+
+.win .btnOutline {
+  background-color: transparent;
+  border-color: var(--stroke-strong);
+  color: var(--text-primary);
+}
+.win .btnOutline:hover {
+  background-color: var(--bg-control);
+  border-color: var(--stroke-strong);
+  color: var(--text-primary);
+}
+.win .btnOutline:active {
+  background-color: var(--pressed);
+  color: var(--text-secondary);
+}
+
+.win .btn:focus-visible::after {
+  border-radius: var(--radius-control);
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.win .btn:disabled,
+.win .btn[aria-disabled="true"] {
+  background-color: var(--disabled);
+  border-color: var(--disabled);
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+.win .btn:disabled .fui-Button__icon,
+.win .btn[aria-disabled="true"] .fui-Button__icon {
+  color: var(--text-disabled);
+}
+
+/* 输入框：32px，圆角 4px */
+.win .fui-Input {
+  min-height: 32px;
+  background-color: var(--bg-control);
+  border-radius: var(--radius-control);
+  border-color: var(--stroke-strong);
+  border-bottom-color: var(--text-secondary);
+  color: var(--text-primary);
+}
+.win .fui-Input:hover {
+  background-color: var(--bg-solid-strong);
+  border-color: var(--stroke-strong);
+  border-bottom-color: var(--text-primary);
+}
+.win .fui-Input:focus-within::after {
+  border-radius: var(--radius-control);
+  border-bottom-color: transparent;
+  outline: 2px solid var(--text-primary);
+  outline-offset: 1px;
+}
+.win .fui-Input:disabled {
+  background-color: var(--disabled);
+  border-color: var(--disabled);
+  color: var(--text-disabled);
+}
+.win .fui-Input__input {
+  color: var(--text-primary);
+}
+.win .fui-Input__input::placeholder {
+  color: var(--text-disabled);
+}
+
+/* 下拉框：与输入框同规格 */
+.win .fui-Select {
+  height: 32px;
+  padding: 0 28px 0 10px;
+  border-radius: var(--radius-control);
+  border-color: var(--stroke-strong);
+  border-bottom-color: var(--text-secondary);
+  background-color: var(--bg-control);
+  color: var(--text-primary);
+  font-family: var(--font);
+  font-size: 14px;
+  transition: background-color 150ms var(--ease), border-color 150ms var(--ease);
+}
+.win .fui-Select:hover {
+  background-color: var(--bg-solid-strong);
+  border-bottom-color: var(--text-primary);
+}
+.win .fui-Select:active {
+  background-color: var(--pressed);
+}
+.win .fui-Select:focus-visible {
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px;
+}
+.win .fui-Select:disabled {
+  background-color: var(--disabled);
+  border-color: var(--disabled);
+  color: var(--text-disabled);
+}
+
+.win .fui-Field {
+  font-family: var(--font);
+  color: var(--text-primary);
+}
+.win .fui-Checkbox__label {
+  color: var(--text-primary);
+  font-size: 14px;
+}
+.win .fui-Switch__label {
+  color: var(--text-primary);
+}
+.win .fui-ProgressBar__bar {
+  height: 4px;
+}
+.win .fui-ProgressBar__label {
+  color: var(--text-secondary);
+}
+
+/* 浮层走 Portal，挂在 body 下，需自带作用域类 */
+.fui-DialogSurface.dialog {
+  max-width: 448px;
+  padding: 24px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-window);
+  background-color: var(--bg-solid-strong);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-dialog);
+  font-family: var(--font);
+}
+.fui-DialogSurface .fui-DialogTitle {
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 600;
+}
+.fui-DialogSurface .fui-DialogContent {
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.fui-PopoverSurface.flyout {
+  max-width: 340px;
+  padding: 12px 16px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-window);
+  background-color: var(--bg-solid-strong);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-flyout);
+  font-family: var(--font);
+  font-size: 14px;
+}

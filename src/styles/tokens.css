@@ -1,0 +1,80 @@
+:root {
+  --accent: #0067C0;
+  --accent-hover: #1975C5;
+  --accent-pressed: #005A9E;
+  --on-accent: #FFFFFF;
+
+  --bg-mica: rgba(243, 243, 243, 0.72);
+  --bg-layer: rgba(255, 255, 255, 0.70);
+  --bg-solid: #F3F3F3;
+  --bg-card: rgba(255, 255, 255, 0.55);
+  --bg-control: rgba(255, 255, 255, 0.70);
+  --bg-solid-strong: #FFFFFF;
+  --bg-code: rgba(0, 0, 0, 0.045);
+  --bg-terminal: #0C0C0C;
+  --text-terminal: #CCCCCC;
+
+  --stroke: rgba(0, 0, 0, 0.0578);
+  --stroke-strong: rgba(0, 0, 0, 0.12);
+
+  --text-primary: #1A1A1A;
+  --text-secondary: #5D5D5D;
+  --text-disabled: #9D9D9D;
+
+  --success: #0F7B0F;
+  --warning: #BC4B09;
+  --danger: #C42B1C;
+
+  --hover: rgba(0, 0, 0, 0.037);
+  --pressed: rgba(0, 0, 0, 0.0524);
+  --disabled: rgba(0, 0, 0, 0.2155);
+
+  --radius-window: 8px;
+  --radius-control: 4px;
+  --radius-card: 8px;
+
+  --shadow-flyout: 0 8px 16px rgba(0, 0, 0, 0.14);
+  --shadow-dialog: 0 32px 64px rgba(0, 0, 0, 0.24), 0 2px 21px rgba(0, 0, 0, 0.14);
+
+  --font: "Segoe UI Variable", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Cascadia Mono", Consolas, ui-monospace, monospace;
+  --ease: cubic-bezier(0.1, 0.9, 0.2, 1);
+
+  --wall-a: #C9DDF2;
+  --wall-b: #E9DCC8;
+  --wall-c: #F4E9DC;
+}
+
+[data-theme="dark"] {
+  --accent: #60CDFF;
+  --accent-hover: #4CC2FF;
+  --accent-pressed: #47B4ED;
+  --on-accent: #000000;
+
+  --bg-mica: rgba(32, 32, 32, 0.72);
+  --bg-layer: rgba(43, 43, 43, 0.70);
+  --bg-solid: #202020;
+  --bg-card: rgba(43, 43, 43, 0.60);
+  --bg-control: rgba(43, 43, 43, 0.70);
+  --bg-solid-strong: #2B2B2B;
+  --bg-code: rgba(0, 0, 0, 0.26);
+
+  --stroke: rgba(255, 255, 255, 0.09);
+  --stroke-strong: rgba(255, 255, 255, 0.14);
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #C5C5C5;
+  --text-disabled: #8A8A8A;
+
+  --success: #6CCB5F;
+  --warning: #F8BE62;
+  --danger: #FF99A4;
+
+  --hover: rgba(255, 255, 255, 0.064);
+  --pressed: rgba(255, 255, 255, 0.09);
+  --disabled: rgba(255, 255, 255, 0.0424);
+
+  --wall-a: #0B3B63;
+  --wall-b: #16233A;
+  --wall-c: #0A1220;
+}

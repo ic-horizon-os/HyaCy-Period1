@@ -1,0 +1,845 @@
+.mission {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.missionHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+.difficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+.difficulty small {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+.bars {
+  display: flex;
+  gap: 3px;
+}
+.bars i {
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--stroke-strong);
+}
+.bars i.on {
+  background: var(--warning);
+}
+
+/* 实验窗口 */
+.tool {
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-card);
+  background: var(--bg-solid-strong);
+}
+.toolHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 48px;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--stroke);
+}
+.toolHead b {
+  font-size: 14px;
+}
+.toolHead span {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+.tool > .subPanel:last-child {
+  border-bottom: 0;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: start;
+  gap: 20px;
+  padding: 20px;
+}
+.subPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+  border-bottom: 1px solid var(--stroke);
+}
+.twoCol .subPanel,
+.tool > .twoCol > .subPanel {
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-card);
+  background: var(--bg-control);
+}
+.subPanel > b {
+  font-size: 14px;
+}
+.stepTitle {
+  margin: 6px 0 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.codeBlock {
+  width: 100%;
+  margin: 0;
+  padding: 14px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-control);
+  background: var(--bg-code);
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.codeBlock.small {
+  font-size: 12px;
+}
+.monoBox {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-control);
+  background: var(--bg-code);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.compareTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.compareTable th,
+.compareTable td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--stroke);
+  text-align: left;
+}
+.compareTable th {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+.win .tool .fui-Field {
+  width: 100%;
+}
+.win .tool .fui-Field .fui-Label {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.inlineForm {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+.answerInput {
+  flex: 1;
+  min-width: 140px;
+}
+.win .answerInput .fui-Input__input,
+.win .monoInput .fui-Input__input {
+  font-family: var(--font-mono);
+}
+
+/* 样本行 / 可点行 */
+.sampleList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sampleRow {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-control);
+  background: var(--bg-solid-strong);
+  transition: background-color 150ms var(--ease), border-color 150ms var(--ease);
+}
+.sampleRow.right {
+  border-color: var(--success);
+}
+.sampleRow.wrong {
+  border-color: var(--danger);
+}
+.sampleRow.miss {
+  border-color: var(--stroke);
+}
+.sampleRow.clickable:hover {
+  background: var(--hover);
+}
+.sampleRow.clickable:active {
+  background: var(--pressed);
+}
+.sampleRow.picked {
+  border-color: var(--accent);
+}
+.sampleRow > .pickSelect {
+  flex: none;
+  width: 152px;
+}
+.sampleText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+.sampleText small {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.sampleText code {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.sampleState {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 4px;
+  min-width: 16px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.sampleState.right {
+  color: var(--success);
+}
+.sampleState.idle,
+.sampleState.pending {
+  color: var(--text-secondary);
+}
+.rank {
+  width: 28px;
+  flex: none;
+  color: var(--text-secondary);
+}
+.sampleHash {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rowButton {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+  padding: 2px 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 13px;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.rowButton:focus-visible {
+  outline-offset: 0;
+}
+.rowButton > span {
+  flex: none;
+  white-space: nowrap;
+}
+.rowButton > span:nth-child(2) {
+  flex: 1;
+}
+.rowButton small {
+  flex: none;
+  margin-left: auto;
+  color: var(--text-secondary);
+}
+
+/* SQL 注入 */
+.sqlPreview {
+  min-height: 104px;
+}
+.sqlUser {
+  background: var(--bg-code);
+  box-shadow: inset 0 -2px 0 var(--warning);
+  color: var(--warning);
+  font-weight: 600;
+}
+.sqlParam {
+  color: var(--accent);
+}
+.loginResult {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 10px 12px;
+  border-left: 3px solid var(--stroke-strong);
+  border-radius: var(--radius-control);
+  background: var(--hover);
+  font-size: 13px;
+}
+.loginResult svg {
+  color: var(--text-secondary);
+}
+.loginResult.ok {
+  border-left-color: var(--success);
+  color: var(--success);
+}
+.loginResult.admin {
+  border-left-color: var(--warning);
+  color: var(--warning);
+}
+.loginResult.fail {
+  border-left-color: var(--danger);
+  color: var(--danger);
+}
+
+/* 抓包分析 */
+.captureBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px 8px;
+}
+.filterInput {
+  flex: 1;
+  min-width: 220px;
+}
+.filterError {
+  font-size: 12px;
+  color: var(--danger);
+}
+.presets {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding: 0 16px 12px;
+}
+.preset {
+  height: 24px;
+  padding: 0 8px;
+  border: 1px solid var(--stroke-strong);
+  border-radius: var(--radius-control);
+  background: transparent;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background-color 150ms var(--ease), border-color 150ms var(--ease);
+}
+.preset:hover {
+  background: var(--hover);
+}
+.preset:active {
+  background: var(--pressed);
+}
+.preset.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.captureBody {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  border-top: 1px solid var(--stroke);
+}
+.captureList {
+  max-height: 440px;
+  overflow: auto;
+  border-right: 1px solid var(--stroke);
+}
+.captureRow {
+  position: relative;
+  display: grid;
+  grid-template-columns: 36px 56px 92px 92px 48px minmax(0, 1fr);
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  height: 32px;
+  padding: 0 12px;
+  border: 0;
+  border-bottom: 1px solid var(--stroke);
+  background: transparent;
+  font-size: 12px;
+  text-align: left;
+  transition: background-color 150ms var(--ease);
+}
+button.captureRow {
+  cursor: pointer;
+}
+button.captureRow::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  width: 3px;
+  border-radius: 2px;
+  background: transparent;
+}
+button.captureRow:hover {
+  background: var(--hover);
+}
+button.captureRow:active {
+  background: var(--pressed);
+}
+button.captureRow.selected,
+button.captureRow.selected:hover {
+  background: var(--hover);
+}
+button.captureRow.selected::before {
+  background: var(--accent);
+}
+.captureHead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  font-size: 11px;
+  color: var(--text-secondary);
+  background: var(--bg-solid-strong);
+}
+.captureInfo {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.protoTag {
+  justify-self: start;
+  padding: 0 6px;
+  border: 1px solid var(--stroke-strong);
+  border-radius: var(--radius-control);
+  font-size: 11px;
+}
+.protoTag.warn {
+  border-color: var(--warning);
+  color: var(--warning);
+}
+.protoTag.alt {
+  color: var(--text-secondary);
+}
+.captureDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+}
+.streamLine {
+  display: block;
+}
+.streamLine.client {
+  color: var(--warning);
+}
+
+/* 排序、选项、参数 */
+.orderList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.orderRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 6px 6px 12px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-control);
+  background: var(--bg-solid-strong);
+  transition: border-color 150ms var(--ease);
+}
+.orderRow.right {
+  border-color: var(--success);
+}
+.orderRow.wrong {
+  border-color: var(--danger);
+}
+.orderIndex {
+  width: 20px;
+  color: var(--text-secondary);
+}
+.orderText {
+  flex: 1;
+  font-size: 13px;
+}
+.orderActions {
+  display: flex;
+  gap: 2px;
+}
+.targetInfo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--warning);
+  border-radius: var(--radius-control);
+  background: var(--hover);
+  font-size: 13px;
+}
+.targetInfo span {
+  color: var(--text-secondary);
+}
+.optionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.optionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.optionCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-height: 88px;
+  padding: 12px 14px;
+  border: 1px solid var(--stroke-strong);
+  border-radius: var(--radius-card);
+  background: var(--bg-control);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 150ms var(--ease), border-color 150ms var(--ease);
+}
+.optionCard::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  width: 3px;
+  border-radius: 2px;
+  background: transparent;
+}
+.optionCard:hover {
+  background: var(--bg-solid-strong);
+}
+.optionCard:active {
+  background: var(--pressed);
+}
+.optionCard.selected {
+  border-color: var(--accent);
+}
+.optionCard.selected::before {
+  background: var(--accent);
+}
+.optionCard.right {
+  border-color: var(--success);
+}
+.optionCard.right::before {
+  background: var(--success);
+}
+.optionCard.wrong {
+  border-color: var(--danger);
+}
+.optionCard.wrong::before {
+  background: var(--danger);
+}
+.optionCard.answer {
+  border-color: var(--success);
+  border-style: dashed;
+}
+.optionLabel {
+  font-size: 13px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.optionCaption {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.optionState {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: auto;
+  font-size: 12px;
+}
+.optionState.right {
+  color: var(--success);
+}
+.optionState.wrong {
+  color: var(--danger);
+}
+.optionExplain {
+  margin: 0;
+  padding: 8px 12px;
+  border-left: 3px solid var(--stroke-strong);
+  border-radius: var(--radius-control);
+  background: var(--hover);
+  font-size: 13px;
+}
+.optionExplain.right {
+  border-left-color: var(--success);
+}
+.optionExplain.wrong {
+  border-left-color: var(--danger);
+}
+.paramGrid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px;
+}
+.paramRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.checkRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+/* 模拟终端输出 */
+.simOutput {
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-card);
+  background: var(--bg-terminal);
+}
+.simOutputHead {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--stroke);
+  font-size: 11px;
+  color: var(--text-terminal);
+}
+.simDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+}
+.simOutputBody {
+  max-height: 340px;
+  margin: 0;
+  padding: 12px 14px;
+  overflow: auto;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--text-terminal);
+  white-space: pre-wrap;
+}
+.simDim {
+  opacity: 0.55;
+}
+
+/* 越权：分段切换、刷卡终端、地址栏 */
+.segment {
+  display: inline-flex;
+  margin-top: 16px;
+  padding: 3px;
+  border: 1px solid var(--stroke-strong);
+  border-radius: var(--radius-control);
+  background: var(--bg-control);
+}
+.segmentItem {
+  height: 30px;
+  padding: 0 14px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background-color 150ms var(--ease), border-color 150ms var(--ease);
+}
+.segmentItem:hover {
+  background: var(--hover);
+}
+.segmentItem:active {
+  background: var(--pressed);
+}
+.segmentItem.selected,
+.segmentItem.selected:hover {
+  border-bottom-color: var(--accent);
+  background: var(--bg-solid-strong);
+  color: var(--accent);
+}
+.storyIntro {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+.reader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.readerIcon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--stroke-strong);
+  border-radius: var(--radius-control);
+  color: var(--accent);
+}
+.monoInput {
+  flex: 1;
+  min-width: 0;
+}
+.account {
+  width: 100%;
+  min-height: 104px;
+  padding: 12px 14px;
+  border: 1px solid var(--stroke-strong);
+  border-radius: var(--radius-card);
+  background: var(--bg-solid-strong);
+}
+.account p {
+  margin: 4px 0 0;
+}
+.accountHead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+.balance {
+  font-size: 24px;
+  font-weight: 600;
+}
+.addressBar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--stroke-strong);
+  border-radius: var(--radius-control);
+  background: var(--bg-control);
+}
+.idInput {
+  width: 120px;
+}
+.warnText {
+  color: var(--warning);
+}
+.noteItem {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* 实验页脚 */
+.labDone {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--success);
+  border-radius: var(--radius-card);
+  background: var(--bg-card);
+  font-size: 13px;
+}
+.labDone b {
+  margin-right: 4px;
+}
+.labDone svg {
+  flex: none;
+  margin-top: 3px;
+  color: var(--success);
+}
+.missionFoot {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.footActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.advance {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.defenseNote {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px 12px 12px;
+  border: 1px solid var(--stroke);
+  border-left: 3px solid var(--success);
+  border-radius: var(--radius-card);
+  background: var(--bg-card);
+}
+.defenseNote svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--success);
+}
+.defenseNote b {
+  display: block;
+  font-size: 13px;
+}
+.defenseNote span {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .twoCol,
+  .captureBody,
+  .optionGrid {
+    grid-template-columns: 1fr;
+  }
+  .captureList {
+    border-right: 0;
+    border-bottom: 1px solid var(--stroke);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sampleRow,
+  .optionCard,
+  .orderRow,
+  .preset,
+  .captureRow,
+  .segmentItem,
+  .fui-Select {
+    transition: none;
+  }
+}

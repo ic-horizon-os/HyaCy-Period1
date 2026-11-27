@@ -1,0 +1,264 @@
+/* 简报 */
+.briefing {
+  display: grid;
+  flex: 1;
+  place-items: center;
+  padding: 32px;
+}
+.briefCard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: min(560px, 100%);
+  padding: 40px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-window);
+  background: var(--bg-mica);
+  backdrop-filter: blur(30px) saturate(1.8);
+}
+.kicker {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+.briefCard h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.briefCard h1 em {
+  display: block;
+  font-style: normal;
+  color: var(--accent);
+}
+.briefCard > p {
+  font-size: 15px;
+  color: var(--text-secondary);
+}
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.rules li {
+  display: flex;
+  gap: 12px;
+  padding: 8px 12px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-control);
+  background: var(--bg-card);
+}
+.rules li span {
+  color: var(--accent);
+}
+.briefActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* 知识卡片 */
+.deck {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.deckHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+.deckHead h2,
+.missionHead h2 {
+  margin-top: 6px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.deckCount {
+  align-self: flex-end;
+}
+.flipCard {
+  display: block;
+  width: 100%;
+  height: 380px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-card);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  perspective: 1600px;
+}
+.flipInner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 250ms var(--ease);
+}
+.flipped .flipInner {
+  transform: rotateY(180deg);
+}
+.flipFace {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 28px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-card);
+  background: var(--bg-solid-strong);
+  backface-visibility: hidden;
+  transition: border-color 150ms var(--ease);
+}
+.cardBack {
+  border-color: var(--accent);
+  transform: rotateY(180deg);
+}
+.flipCard:hover .flipFace {
+  border-color: var(--stroke-strong);
+}
+.flipCard:active .flipFace {
+  background: var(--bg-control);
+}
+.cardCode {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+.cardIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 6px;
+  border: 1px solid var(--stroke-strong);
+  border-radius: var(--radius-card);
+  color: var(--accent);
+}
+.cardIcon svg {
+  width: 28px;
+  height: 28px;
+}
+.cardTag {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.cardTerm,
+.cardAnalogy {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.cardAnalogy {
+  color: var(--accent);
+}
+.cardAsk,
+.cardExplain {
+  font-size: 16px;
+}
+.cardAsk {
+  color: var(--text-secondary);
+}
+.cardRange {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-control);
+  background: var(--hover);
+  font-size: 14px;
+}
+.cardRange b {
+  font-size: 12px;
+}
+.cardHint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+.deckActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.deckDots {
+  display: flex;
+  gap: 6px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 1px solid var(--stroke-strong);
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color 150ms var(--ease), width 150ms var(--ease);
+}
+.dot.done {
+  border-color: transparent;
+  background: var(--text-disabled);
+}
+.dot:hover {
+  border-color: var(--text-secondary);
+}
+.dot:active {
+  background: var(--pressed);
+}
+.dot.active,
+.dot.active:hover {
+  width: 20px;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+.teacherTip {
+  padding: 10px 12px;
+  border: 1px solid var(--stroke);
+  border-radius: var(--radius-control);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.teacherTip b {
+  color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .briefCard {
+    padding: 24px;
+  }
+  .briefCard h1 {
+    font-size: 32px;
+  }
+  .flipCard {
+    height: 440px;
+  }
+  .flipFace {
+    padding: 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flipInner,
+  .flipFace,
+  .dot {
+    transition: none;
+  }
+}
